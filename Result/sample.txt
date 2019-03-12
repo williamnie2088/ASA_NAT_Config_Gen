@@ -1,0 +1,12 @@
+object network object_name_1 
+ host 192.168.1.10 
+nat (inside,outside) static 25.43.55.60 
+access-list outside_access_in extended permit object-group Http_s_Ports any object object_name_1 
+access-list outside_access_in extended permit icmp any object object_name_1 object-group ICMP_Access 
+
+object network object_name_2 
+ host 192.168.1.20 
+nat (inside,outside) static 25.43.55.61 
+access-list outside_access_in extended permit object-group Http_s_Ports any object object_name_2 
+access-list outside_access_in extended permit icmp any object object_name_2 object-group ICMP_Access 
+
